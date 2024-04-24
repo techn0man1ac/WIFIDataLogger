@@ -52,7 +52,7 @@ def poll_esp():
 def save_data(data):
     """Save data to the data.json file."""
     with open("MyProjects/ESP_To_Python/SourceCodes/Python/data.json", "a") as file:
-        file.write(str(data) + '\n')
+        file.write(str(data) + ", " + '\n')
 
 
 def update_gui(message):

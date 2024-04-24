@@ -43,7 +43,7 @@ void setup() {
 
 void loop() {
   server.handleClient();
-  digitalWrite(LED_BUILTIN, 1);
+  digitalWrite(LED_BUILTIN, 1); // LED off
 }
 
 void handleDevices() {
@@ -63,7 +63,7 @@ void handleDevices() {
     device["ssid"] = WiFi.SSID(i);
     device["rssi"] = WiFi.RSSI(i);
   }
-  digitalWrite(LED_BUILTIN, 0);
+  digitalWrite(LED_BUILTIN, 0); // LED on
   // Send data in JSON format
   String response;
   serializeJson(jsonBuffer, response);
