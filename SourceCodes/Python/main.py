@@ -5,9 +5,10 @@ Thank's ChatGPT for help, by Serhii Trush with MIT Licence
 import requests
 import threading
 import tkinter as tk
+from datetime import datetime  # Додаємо імпорт для роботи з часом
 
 esp8266_ip = "192.168.0.110"  # IP-addres ESP8266
-url = f"http://{esp8266_ip}/inline"  # URL to retrieve data
+url = f"http://{esp8266_ip}/devices"  # URL to retrieve data
 is_polling = False  # A variable to determine whether ESP polling is performed
 cycles = 0  # Counter of  cycles
 
@@ -27,10 +28,12 @@ def poll_esp():
             response = requests.get(url)
             if response.status_code == 200:
                 data = response.text
-                with open("MyProjects/ESP_To_Python/SourceCodes/Python/data.txt", "a") as file:  # Opening a file and add the data
-                    file.write(data + "\n")  # Write data on a new line
-                    print(f"Datas {data} successfully added to the file data.txt {cycles} cycles")
-                response_label.config(text=data)
+                timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")  # Отримуємо поточний час у форматі строки
+                tempData = str({"timestamp": timestamp, "data": data} )
+                with open("MyProjects/ESP_To_Python/SourceCodes/Python/data.json", "a") as file:  # Opening a file and add the data
+                    file.write(tempData + '\n')  # Write data on a new line
+                    print(f"{tempData} added to the data.txt {cycles} cycles")
+                response_label.config(text=tempData)
                 cycles += 1
                 cycle_label.config(text=f"Cycles: {cycles}")
             else:
@@ -43,7 +46,7 @@ def main():
 
     root = tk.Tk()
     root.title("WiFi Signal logging")
-    root.geometry("400x200")
+    root.geometry("400x220")
 
     start_button = tk.Button(root, text="Start logging", command=start_polling)
     start_button.pack(pady=10)
