@@ -1,4 +1,9 @@
-//Thank's ChatGPT for help, by Serhii Trush with MIT Licence
+/*
+  Tech01 simple python WiFi signal logger By Serhii Trush with MIT License.
+  https://github.com/techn0man1ac/WIFIDataLogger
+  Thank's ChatGPT for help.
+  By Tech01 labs 2024.
+*/
 
 #include <ESP8266WiFi.h>
 #include <ESP8266WebServer.h>
@@ -38,10 +43,11 @@ void setup() {
 
 void loop() {
   server.handleClient();
+  digitalWrite(LED_BUILTIN, 1);
 }
 
 void handleDevices() {
-  digitalWrite(LED_BUILTIN, 0);
+
   // Create a dynamic JSON buffer
   DynamicJsonDocument jsonBuffer(1024);
 
@@ -57,10 +63,9 @@ void handleDevices() {
     device["ssid"] = WiFi.SSID(i);
     device["rssi"] = WiFi.RSSI(i);
   }
-
+  digitalWrite(LED_BUILTIN, 0);
   // Send data in JSON format
   String response;
   serializeJson(jsonBuffer, response);
   server.send(200, "application/json", response);
-  digitalWrite(LED_BUILTIN, 1);
 }
