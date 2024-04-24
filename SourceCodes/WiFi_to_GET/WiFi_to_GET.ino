@@ -7,7 +7,7 @@
 
 #include <ESP8266WiFi.h>
 #include <ESP8266WebServer.h>
-#include <ArduinoJson.h> // ArduinoJson-7.0.4
+#include <ArduinoJson.h> // ArduinoJson 7.0.4
 
 const char* ssid = "YOUSSID";
 const char* password = "YOUPASSWORD";
