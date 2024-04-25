@@ -44,6 +44,10 @@ https://www.youtube.com/watch?v=217ZRDhaqyE
 - Tkinter library
 - ESP8266 device(install ArduinoJson 7.0.4 library for Arduino IDE)
 
+## JSON Data Format
+
+Please note that the program generates a JSON file with an invalid format due to missing square brackets at the beginning and end of the file. This is because each record in the JSON file represents a single scan of WiFi networks by the ESP8266 device. However, the data visualization program is designed to handle this issue and can still read the JSON file correctly.
+
 ## License
 
 This project is licensed under the MIT License.
