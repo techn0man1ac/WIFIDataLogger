@@ -18,7 +18,7 @@ It provides detailed information about the signal strength variations for the se
 
 ## Video demonstration
 
-https://www.youtube.com/shorts/KOSmo48dc8E
+https://www.youtube.com/watch?v=217ZRDhaqyE
 
 ## Features
 
@@ -48,6 +48,6 @@ https://www.youtube.com/shorts/KOSmo48dc8E
 
 This project is licensed under the MIT License.
 
-##Acknowledgments
+## Acknowledgments
 
 Thanks to ChatGPT for assistance with the project.
