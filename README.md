@@ -58,7 +58,9 @@ Everything mentioned above applies to version V0.1, but in V0.2, there have been
 - A local web server was created (using the Flask framework).
 - Use database (*.db) SQLite library, was created where the generated signal strength and access point name are recorded in JSON format (on the ESP8266 side).
 - The ESP8266 generates a POST request, sending data to the web server in this way.
-- The visualization program opens the database in *.db format.
+- The visualization program opens the database in "*.db" format.
+
+## Video vith V0.2 
 
 https://youtu.be/m2musxTTEck
 
