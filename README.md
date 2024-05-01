@@ -1,3 +1,6 @@
+[![UA_version_README](https://raw.githubusercontent.com/techn0man1ac/WIFIDataLogger/main/imgs/Flags/UA%402x.png)](https://github.com/techn0man1ac/WIFIDataLogger/blob/main/README_UA.md)
+[![GB_version_README](https://raw.githubusercontent.com/techn0man1ac/WIFIDataLogger/main/imgs/Flags/GB%402x.png)](https://github.com/techn0man1ac/WIFIDataLogger/)
+
 # ESP8266 WiFi signal logger
 
 ![Program datalogger screen](https://raw.githubusercontent.com/techn0man1ac/WIFIDataLogger/main/imgs/image.png)
@@ -47,6 +50,15 @@ https://www.youtube.com/watch?v=217ZRDhaqyE
 ## JSON Data Format
 
 Please note that the program generates a JSON file with an invalid format due to missing square brackets at the beginning and end of the file. This is because each record in the JSON file represents a single scan of WiFi networks by the ESP8266 device. However, the data visualization program is designed to handle this issue and can still read the JSON file correctly.
+
+## Project Version V0.2
+
+Everything mentioned above applies to version V0.1, but in V0.2, there have been significant conceptual changes, namely:
+
+- A local web server was created (using the Flask framework).
+- A database (*.db) was created where the generated signal strength and access point name are recorded in JSON format (on the ESP8266 side).
+- The ESP8266 generates a POST request, sending data to the web server in this way.
+- The visualization program opens the database in *.db format.
 
 ## License
 
