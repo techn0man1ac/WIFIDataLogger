@@ -1,0 +1,8 @@
+requests
+threading
+tk
+datetime
+json
+pandas
+matplotlib
+Flask
