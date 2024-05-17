@@ -1,3 +1,10 @@
+'''
+  Tech01 simple python WiFi signal logger By Serhii Trush with MIT License.
+  https://github.com/techn0man1ac/WIFIDataLogger
+  Thank's ChatGPT for help.
+  By Tech01 labs 2024.
+'''
+
 from flask import Flask, request, jsonify
 import sqlite3
 from datetime import datetime
